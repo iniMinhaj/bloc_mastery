@@ -34,7 +34,6 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("build=============");
     final counterBloc = BlocProvider.of<CounterBloc>(context);
     (context);
     return Scaffold(

@@ -27,7 +27,6 @@ class TodoScreen extends StatelessWidget {
                 subtitle: Text(todos[index].createdAt.toString()),
                 trailing: InkWell(
                     onTap: () {
-                      print("pressed deleted.");
                       context.read<TodoCubit>().deleteTodo(index);
                     },
                     child: const Icon(Icons.delete)),

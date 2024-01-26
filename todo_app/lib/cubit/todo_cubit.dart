@@ -5,7 +5,8 @@ class TodoCubit extends Cubit<List<Todo>> {
   TodoCubit() : super([]);
 
   addTodo(Todo todo) {
-    emit([...state, todo]);
+    state.add(todo);
+    emit([...state]);
   }
 
   deleteTodo(int index) {
