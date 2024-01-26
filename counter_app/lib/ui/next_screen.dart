@@ -12,6 +12,11 @@ class NextScreen extends StatelessWidget {
     final counterBloc = BlocProvider.of<CounterBloc>(context);
     return Scaffold(
       appBar: AppBar(),
+      body: BlocBuilder<CounterBloc, int>(
+        builder: (context, state) => Center(
+          child: Text(state.toString(), style: const TextStyle(fontSize: 24)),
+        ),
+      ),
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
