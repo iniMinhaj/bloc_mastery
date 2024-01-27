@@ -27,8 +27,7 @@ class LoginScreen extends StatelessWidget {
           }
 
           if (state is AuthLoading) {
-            print("Loading....");
-            CircularProgressIndicator();
+            const CircularProgressIndicator();
           }
         },
         child: Padding(
@@ -55,8 +54,6 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: 16),
               GestureDetector(
                 onTap: () {
-                  print(email);
-                  print(password);
                   context.read<AuthBloc>().add(LoginEvent(
                       email: email.toString(), password: password.toString()));
                 },
@@ -68,19 +65,6 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24),
-              Row(
-                children: [
-                  GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      height: 48,
-                      width: 140,
-                      color: Colors.blueAccent,
-                      child: const Center(child: Text("Login With Gmail")),
-                    ),
-                  ),
-                ],
-              )
             ],
           ),
         ),
